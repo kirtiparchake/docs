@@ -22,11 +22,9 @@ const Frontpage = () => {
       }
     ]
   return (
-    <div className="fixed top-0 left-0 z-[5] w-full h-full flex gap-5 flex-wrap">
-      {data.map ((item 
-        
-      )=>{
-        <Card data={item} />
+    <div className="fixed top-0 left-0 z-[3] w-full h-full flex gap-5 flex-wrap">
+      {data.map ((item )=>{
+        <Card data={item} key={item.desc} />
       })}
     </div>
   )

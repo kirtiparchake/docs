@@ -15,8 +15,8 @@ function Card(data) {
         
         </span>
       </div>
-      {data.tag.isOpen &&(+
-      
+      {data.tag?.isOpen &&(+
+
           <div className="tag w-full py-5 bg-green-600 flex items-center justify-center absolute bottom-0 right-0" >
           <h3 className="text-md ">{data.tagTittle}</h3>
   
