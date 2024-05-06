@@ -1,30 +1,35 @@
 
+import { useRef } from "react"
 import Card from "./Card"
 
 
 const Frontpage = () => {
+  const ref = useRef(null)
     const data = [
       {desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing',
       filesize: '.9mb',
-      close: true,
+      close: false,
       tag:{isOpen : true, tagtTittle:' Download Now', tagColor:'green'},
           
       }, {desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing',
       filesize: '.9mb',
       close: true,
-      tag:{isOpen : true, tagtTittle:' Download Now', tagColor:'green'},
+      tag:{isOpen : true, tagtTittle:' Download Now', tagColor:'blue'},
           
       }, {desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing',
       filesize: '.9mb',
-      close: true,
-      tag:{isOpen : true, tagtTittle:' Download Now', tagColor:'green'},
+      close: false,
+      tag:{isOpen : true, tagtTittle:' Download Now', tagColor:'green'}
           
       }
     ]
   return (
-    <div className="fixed top-0 left-0 z-[3] w-full h-full flex gap-5 flex-wrap">
+    <div ref={ref} className="fixed top-0 left-0 z-[3] w-full h-full flex gap-5 flex-wrap">
       {data.map ((item )=>{
-        <Card data={item} key={item.desc} />
+        return(
+
+          <Card data={item} key={item.desc} reference= {ref} />
+        )
       })}
     </div>
   )
